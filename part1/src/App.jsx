@@ -8,6 +8,7 @@ const Hello = () => {
     </div>
   )
 }
+/*
 function Avatar() {
   return (
     <img
@@ -19,14 +20,29 @@ function Avatar() {
     />
   );
 }
-
+*/
+function Avatar(props) {
+  let person = props.person;
+  let size = props.size;
+  return (
+    <img
+      className="avatar"
+      src={`https://i.imgur.com/${person.imageId}.jpg`}
+      alt={person.name}
+      width={size}
+      height={size}
+    />
+  );
+}
 
 
 const App = () => {
   return (
     <div>
       <h1>Greetings</h1>
-      <Avatar/>
+      <Avatar />
+      {/*person={{ name: 'Lin Lanying', imageId: '1bX5QH6' }}
+        size={100} /> */}
       <Hello />
     </div>
   )
